@@ -2,12 +2,18 @@
   services:
     
     laravel:
+      build:
+        context: ./laravel
+        dockerfile: Dockerfile
       image: felipeesc91/laravel
       container_name: laravel
       networks:
         - laranet
     
     nginx:
+      build:
+        context: ./nginx
+        dockerfile: Dockerfile
       image: felipeesc91/nginx:prod
       container_name: nginx
       networks:
